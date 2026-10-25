@@ -1,0 +1,10 @@
+import { ArrowUpRight, CalendarDays, Music2, Trophy, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const categories = [
+ {icon:CalendarDays,title:'Fests & events',text:'Discover campus festivals, technical events, workshops, talks, competitions, and their official registration links.'},
+ {icon:Users,title:'Clubs & communities',text:'Find student clubs, coding groups, cultural communities, volunteering opportunities, and ways to get involved.'},
+ {icon:Music2,title:'Campus culture',text:'Share practical, respectful first-hand experiences about student life, facilities, and the everyday campus experience.'},
+ {icon:Trophy,title:'Build and showcase',text:'Highlight hackathons, student projects, competitions, exhibitions, and the work students are proud to share.'},
+];
+export function CampusLifePage(){return <div className="page-shell"><section className="page-hero"><div className="container narrow"><p className="eyebrow">CAMPUS LIFE</p><h1>College is more than <span>the classroom.</span></h1><p className="page-intro">Fests, clubs, workshops, friends, competitions, and projects are part of the journey too. Help other students discover opportunities worth showing up for.</p><Link className="button button-primary" to="/contribute">Share a campus opportunity <ArrowUpRight size={16}/></Link></div></section><section className="container page-section"><div className="steps-grid">{categories.map(({icon:Icon,title,text},index)=><article className="step-card" key={title}><span className="step-number">0{index+1}</span><Icon size={23}/><h3>{title}</h3><p>{text}</p></article>)}</div><div className="notice-panel" style={{marginTop:28}}><CalendarDays size={23}/><div><h2>Event listings need current sources</h2><p>No specific event dates or campus listings are shown until we can verify them. When sharing an event, include the organiser's official page, venue, date, registration details, and the date you checked it.</p></div></div></section></div>;}

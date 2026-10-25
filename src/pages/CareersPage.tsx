@@ -1,0 +1,10 @@
+import { ArrowUpRight, BriefcaseBusiness, Code2, FileText, MessagesSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const pathways = [
+ {icon:Code2,title:'Projects & portfolios',text:'Find project ideas, collaborate with peers, document your work, and build a portfolio that demonstrates what you can do.'},
+ {icon:FileText,title:'Resume & applications',text:'Share resume resources, internship application checklists, and practical ways to explain your skills and projects.'},
+ {icon:MessagesSquare,title:'Interview preparation',text:'Practise technical and behavioural questions, share preparation approaches, and record interview experiences with permission.'},
+ {icon:BriefcaseBusiness,title:'Internships & placements',text:'Exchange leads and preparation resources. Every opportunity should link to an original source and have a checked date.'},
+];
+export function CareersPage(){return <div className="page-shell"><section className="page-hero"><div className="container narrow"><p className="eyebrow">CAREERS & OPPORTUNITIES</p><h1>Build the skills. Find the <span>next opportunity.</span></h1><p className="page-intro">A student-led space for projects, portfolios, internships, interview preparation, and placement experiences — designed to help students move forward together.</p><Link className="button button-primary" to="/contribute">Share a project or resource <ArrowUpRight size={16}/></Link></div></section><section className="container page-section"><div className="steps-grid">{pathways.map(({icon:Icon,title,text},index)=><article className="step-card" key={title}><span className="step-number">0{index+1}</span><Icon size={23}/><h3>{title}</h3><p>{text}</p></article>)}</div><div className="notice-panel" style={{marginTop:28}}><BriefcaseBusiness size={23}/><div><h2>Opportunity listings must be trustworthy</h2><p>We do not claim to offer jobs or guarantee placements. Before an opportunity is published, it should include a credible original link, relevant eligibility details, and a last-checked date. Never pay a recruiter to secure an offer.</p></div></div></section></div>;}
