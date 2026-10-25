@@ -7,9 +7,9 @@ import { site } from '../content/site';
 
 const journeys = [
   { number: '01', title: 'PGCET & admissions', description: 'Prepare, verify official updates, and navigate your next step.', href: '/pgcet', icon: BookOpen },
-  { number: '02', title: 'College & learning', description: 'Find resources, learn with peers, and make college count.', href: '/learn', icon: GraduationCap },
-  { number: '03', title: 'Campus life', description: 'Discover fests, clubs, workshops, and student opportunities.', href: '/community', icon: CalendarDays },
-  { number: '04', title: 'Careers & projects', description: 'Build skills, share projects, and prepare for internships and placements.', href: '/learn', icon: BriefcaseBusiness },
+  { number: '02', title: 'College & learning', description: 'Find resources, learn with peers, and make college count.', href: '/colleges', icon: GraduationCap },
+  { number: '03', title: 'Campus life', description: 'Discover fests, clubs, workshops, and student opportunities.', href: '/campus-life', icon: CalendarDays },
+  { number: '04', title: 'Careers & projects', description: 'Build skills, share projects, and prepare for internships and placements.', href: '/careers', icon: BriefcaseBusiness },
 ];
 
 export function HomePage() {
