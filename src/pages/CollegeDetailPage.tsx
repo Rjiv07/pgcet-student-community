@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowUpRight, BookOpen, BriefcaseBusiness, GraduationCap, MapPin, ShieldCheck } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { colleges, programmeLabels, type ProgrammeKey } from '../content/colleges';
+import './college-pages.css';
 
 const programmeIcons = { mca: BookOpen, mba: BriefcaseBusiness, mtech: GraduationCap };
 
