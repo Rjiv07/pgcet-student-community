@@ -1,0 +1,67 @@
+name: Suggest a resource
+description: Recommend an official notice, syllabus, study resource, or useful guide.
+title: "[Resource]: "
+labels: ["content", "review-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a resource for the student community. Please link to the original source; a suggestion is not published automatically.
+  - type: input
+    id: resource-title
+    attributes:
+      label: Resource title
+      description: A clear name students will recognise.
+      placeholder: Official syllabus for the relevant exam/course
+    validations:
+      required: true
+  - type: input
+    id: source-url
+    attributes:
+      label: Original source URL
+      description: Prefer the official authority, university, organiser, or original publisher.
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Who will this help?
+      options:
+        - PGCET aspirants
+        - Newly admitted students
+        - Current MCA students
+        - Project and peer-learning groups
+        - Internship and placement seekers
+        - Multiple stages of the student journey
+    validations:
+      required: true
+  - type: dropdown
+    id: resource-type
+    attributes:
+      label: Resource type
+      options:
+        - Official notice or policy
+        - Syllabus or exam information
+        - Study material or learning link
+        - College or course information
+        - Project or career guide
+        - Campus event or opportunity
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: why-useful
+    attributes:
+      label: Why is it useful?
+      description: Mention the course/exam/year if relevant and anything a reviewer should verify.
+      placeholder: This helps students because...
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I have shared the original source where possible and have not included private personal information.
+          required: true
