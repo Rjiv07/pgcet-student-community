@@ -68,7 +68,7 @@ export function HomePage() {
             action={<Link className="text-link" to="/learn">Browse resources <ArrowRight size={16} /></Link>}
           />
           <div className="resource-grid">
-            {resources.map((resource) => <ResourceCard key={resource.id} resource={resource} />)}
+            {resources.filter((resource) => resource.id !== 'resource-submissions').slice(0, 3).map((resource) => <ResourceCard key={resource.id} resource={resource} />)}
           </div>
         </div>
       </section>
