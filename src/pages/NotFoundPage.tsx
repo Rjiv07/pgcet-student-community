@@ -1,0 +1,3 @@
+import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+export function NotFoundPage(){return <section className="not-found container"><p className="eyebrow">404 · WRONG TURN</p><h1>This page took a different route.</h1><p>That link may have moved or the page may not exist yet.</p><Link className="button button-primary" to="/"><ArrowLeft size={16}/> Back to home</Link></section>;}
