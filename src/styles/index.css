@@ -12,3 +12,5 @@
   .nav-link.active{box-shadow:inset 3px 0 var(--teal);padding-left:13px}
   .nav-join{margin-top:5px}
 }
+
+.resource-detail-list{display:flex;flex-direction:column;gap:0;margin-top:24px;border-top:1px solid var(--border)}.resource-detail-item{display:grid;grid-template-columns:38px 1fr;gap:15px;padding:22px 0;border-bottom:1px solid var(--border)}.resource-detail-item p{color:#52616A;font-size:14px;line-height:1.8}.resource-detail-item .step-number{padding-top:4px}
