@@ -1,0 +1,11 @@
+import { Search } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { ResourceCard } from '../components/content/ResourceCard';
+import { SectionHeading } from '../components/ui/SectionHeading';
+import { resources } from '../content/resources';
+export function ResourcesPage() {
+ const [query,setQuery]=useState(''); const [category,setCategory]=useState('All');
+ const categories=['All',...Array.from(new Set(resources.map((r)=>r.category)))];
+ const filtered=useMemo(()=>{const q=query.trim().toLowerCase();return resources.filter((r)=>(category==='All'||r.category===category)&&(!q||[r.title,r.summary,r.category,r.sourceLabel].some(v=>v.toLowerCase().includes(q))));},[category,query]);
+ return <div className="page-shell"><section className="page-hero"><div className="container narrow"><p className="eyebrow">LEARN & RESOURCES</p><h1>Good information should be <span>easy to find.</span></h1><p className="page-intro">A growing library of useful starting points for preparation, learning, projects, and career growth. Resources will be reviewed and expanded with student contributions.</p></div></section><section className="container page-section"><SectionHeading eyebrow="THE RESOURCE LIBRARY" title="Start with what you need."/><div className="resource-controls"><label className="search-field"><Search size={18}/><span className="sr-only">Search resources</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search subjects, topics, resources…"/></label><label className="filter-field"><span className="sr-only">Filter by category</span><select value={category} onChange={e=>setCategory(e.target.value)}>{categories.map(item=><option key={item}>{item}</option>)}</select></label></div><p className="results-count" aria-live="polite">{filtered.length} {filtered.length===1?'resource':'resources'} shown</p>{filtered.length?<div className="resource-grid">{filtered.map(resource=><ResourceCard key={resource.id} resource={resource}/>)}</div>:<div className="empty-state"><Search size={25}/><h3>No matching resources yet</h3><p>Try a different search or category. You can also suggest a resource for review.</p></div>}</section></div>;
+}
