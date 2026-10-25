@@ -1,0 +1,53 @@
+name: Share a student experience
+description: Propose a firsthand insight about college, learning, projects, or careers.
+title: "[Student experience]: "
+labels: ["student-experience", "review-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share only what you are comfortable making public. Keep the account factual and respectful. It will not be published automatically; moderators must review it and confirm consent before any public use.
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: For example, semester study habits, a project lesson, or an internship search.
+    validations:
+      required: true
+  - type: dropdown
+    id: journey-stage
+    attributes:
+      label: Which stage does this relate to?
+      options:
+        - PGCET preparation
+        - Admission and transition to college
+        - MCA coursework and exams
+        - Campus life and clubs
+        - Projects and portfolio
+        - Internship and placement preparation
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Your experience
+      description: What happened, what did you learn, and what might help another student? Avoid unsupported claims about other people or institutions.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Supporting links (optional)
+      description: Link official or original sources for any factual claims that can be checked.
+    validations:
+      required: false
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent and privacy
+      options:
+        - label: I understand this is a public GitHub issue and I have removed private or sensitive information.
+          required: true
+        - label: I consent to the community reviewing this submission for possible publication, with follow-up if clarification is needed.
+          required: true
