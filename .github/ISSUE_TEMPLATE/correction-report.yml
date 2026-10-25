@@ -1,0 +1,39 @@
+name: Report a correction or broken link
+description: Flag outdated information, a broken source, an error, or a privacy concern.
+title: "[Correction]: "
+labels: ["correction", "review-needed"]
+body:
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: What needs attention?
+      options:
+        - Broken link
+        - Outdated information
+        - Incorrect or unclear statement
+        - Missing or weak source
+        - Privacy or safety concern
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: page-url
+    attributes:
+      label: Page or resource URL
+      placeholder: https://pgcet-student-community.vercel.app/...
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should we review?
+      description: Explain the issue and, if possible, link to a more authoritative source.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have not included passwords, identity numbers, private messages, or unnecessary personal details.
+          required: true
